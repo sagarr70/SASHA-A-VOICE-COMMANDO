@@ -5,7 +5,7 @@ import tkinter as tk
 import wikipedia
 import webbrowser
 
-engine = pyttsx3.init('sapi5')
+engine = pyttsx3.init('espeak')
 voices = engine.getProperty('voices')
 # print(voices[0].id)
 engine.setProperty('voices', voices[0].id)
@@ -71,9 +71,17 @@ def takeCommand():
                 speak(result)
                 ra.mainloop()
             elif "open youtube" in query:
-                webbrowser.open("youtube.com")
+                try:
+
+                    webbrowser.get("firefox").open("https://www.youtube.com")
+                except:
+                    webrowser.open("https://www.youtube.com")
             elif "open google" in query:
-                webbrowser.open("google.com")
+                try:
+
+                    webbrowser.get("firefox").open("https://www.google.com")
+                except:
+                    webrowser.open("https://www.google.com")
 
 
 
